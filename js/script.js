@@ -1,7 +1,7 @@
 let blogPosts =[
-    {date:"June 1, 2024", title:"Good weather", content:"Today's weather is sunny and nice!"},
-    {date:"Aug 15, 2024", title:"Hiking", content:"We went north for a day hiking for 20kms"},
-    {date:"Nov 1, 2024", title:"Helloween", content:"We went to Wonderland for haunt house"}
+    {date:"2024-06-01", title:"Good weather", content:"Today's weather is sunny and nice!"},
+    {date:"2024-08-05", title:"Hiking", content:"We went north for a day hiking for 20kms"},
+    {date:"2024-11-01", title:"Helloween", content:"We went to Wonderland for haunt house"}
     
 ]
 
