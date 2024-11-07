@@ -30,4 +30,5 @@ document.getElementById("newPostForm").addEventListener("submit", function(event
 
     alert("Blog post saved successfully!");
     document.getElementById("newPostForm").reset();
+    window.location.href = "index.html";
 });

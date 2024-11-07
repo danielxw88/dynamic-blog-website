@@ -52,10 +52,23 @@ function saveEdit() {
 
     loadPost();
     toggleEditMode();
+    window.location.href = "index.html";
+}
+
+function deletePost() {
+    const postId = getQueryParam("id");
+    const posts = JSON.parse(localStorage.getItem("blogPosts")) || [];
+
+    posts.splice(postId, 1);
+
+    localStorage.setItem("blogPosts", JSON.stringify(posts));
+
+    alert("Post deleted successfully.");
+    window.location.href = "index.html";
 }
 
 document.getElementById("edit-button").addEventListener("click", toggleEditMode);
 document.getElementById("save-edit").addEventListener("click", saveEdit);
-
+document.getElementById("delete-button").addEventListener("click", deletePost);
 
 window.onload = loadPost;
