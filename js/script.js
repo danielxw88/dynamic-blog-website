@@ -1,17 +1,6 @@
-let blogPosts =[
-    {date:"2024-06-01", title:"Good weather", content:"Today's weather is sunny and nice!"},
-    {date:"2024-08-05", title:"Hiking", content:"We went north for a day hiking for 20kms"},
-    {date:"2024-11-01", title:"Helloween", content:"We went to Wonderland for haunt house"}
-    
-]
-
-if (!localStorage.getItem("blogPosts")) {
-    localStorage.setItem("blogPosts", JSON.stringify(blogPosts));
-}
-
 function loadBlogPosts() {
     const postsContainer = document.getElementById("blog-posts-container");
-    const posts = JSON.parse(localStorage.getItem("blogPosts"));
+    const posts = JSON.parse(localStorage.getItem("blogPosts"))||[];
 
     postsContainer.innerHTML = "";
 
@@ -19,8 +8,18 @@ function loadBlogPosts() {
         const postText = `${post.date} - ${post.title}: ${post.content}`;
         postsContainer.innerHTML += `<p>${postText}</p>`;
     });
+    
 }
 
+function editPost() {
+    const postId = document.getElementById("edit-id").value.trim();
+    
+    if (postId == "") {
+        alert("Please enter a valid post ID.");
+        return;
+    }
 
+    window.location.href = `post.html?id=${postId}`;
+}
 window.onload = loadBlogPosts;
 
